@@ -3,6 +3,7 @@ package net.teamluxron.sheepspeek.event;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
@@ -36,9 +37,10 @@ public class SheepSpeekEventHandler {
         BlockPos pos = sheep.blockPosition();
 
         if (!SheepSpeekConfig.SERVER.enabled.get()) return;
+        if (event.getHand() != InteractionHand.MAIN_HAND) return;
 
         if (checkSecretTrigger(level, pos)) {
-            sendSecretMessage(player, "[Secret Sheep] ", SECRET_MESSAGES);
+            sendSecretMessage(player, "[Sheep] ", SECRET_MESSAGES);
         } else if (SheepSpeekConfig.SERVER.secretMessages.get() && random.nextFloat() < 0.1f) {
             sendSecretMessage(player, "[Sheep] ", SECRET_MESSAGES);
         } else {

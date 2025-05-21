@@ -32,6 +32,7 @@ public class SheepSpeekConfig {
                             "Hello!",
                             "I hate pistons",
                             "Thanks Kaupen",
+                            "Thanks wd",
                             "I am sheep",
                             "You will live an unfulfilled life only if you let it be",
                             "I'm on the lam",
