@@ -21,21 +21,23 @@ import java.util.Random;
 
 public class SheepSpeekEventHandler {
     private final Random random = new Random();
-    private static final List<String> SECRET_MESSAGES = List.of(
-            "KILL YOURSELF",
+    private final List<String> SECRET_MESSAGES = List.of(
             "I hate you with every fibre of my being",
             "Redstone was a mistake",
             "You want a medal you failed abortion?"
     );
 
-    @SubscribeEvent
-    public void onEntityInteract(PlayerInteractEvent.EntityInteract event) {
+    public void onEntityInteractSpecific(PlayerInteractEvent.EntityInteractSpecific event) {
         if (!(event.getTarget() instanceof Sheep) || event.getLevel().isClientSide()) return;
 
         Player player = event.getEntity();
         Sheep sheep = (Sheep) event.getTarget();
+        Level level = event.getLevel();
+        BlockPos pos = sheep.blockPosition();
 
-        if (checkSecretTrigger(event.getLevel(), sheep.blockPosition())) {
+        if (!SheepSpeekConfig.SERVER.enabled.get()) return;
+
+        if (checkSecretTrigger(level, pos)) {
             sendSecretMessage(player, "[Secret Sheep] ", SECRET_MESSAGES);
         } else if (SheepSpeekConfig.SERVER.secretMessages.get() && random.nextFloat() < 0.1f) {
             sendSecretMessage(player, "[Sheep] ", SECRET_MESSAGES);
@@ -60,23 +62,17 @@ public class SheepSpeekEventHandler {
         player.sendSystemMessage(Component.literal("§5" + prefix + "§r " + msg));
     }
 
-    private boolean checkSecretTrigger(Level level, BlockPos pos) {
-        for (BlockPos checkPos : BlockPos.withinManhattan(pos, 1, 1, 1)) {
-            if (isEndRodNextToPiston(level, checkPos)) return true;
-        }
-        return false;
-    }
-
-    private boolean isEndRodNextToPiston(Level level, BlockPos pos) {
-        if (!level.getBlockState(pos).is(Blocks.END_ROD)) return false;
-
-        for (Direction direction : Direction.values()) {
-            BlockPos pistonPos = pos.relative(direction);
-            BlockState state = level.getBlockState(pistonPos);
-            Block block = state.getBlock();
-
-            if (block instanceof PistonBaseBlock || block instanceof PistonHeadBlock) {
-                return true;
+    private boolean checkSecretTrigger(Level level, BlockPos sheepPos) {
+        for (BlockPos nearbyPos : BlockPos.withinManhattan(sheepPos, 20, 10, 20)) {
+            BlockState state = level.getBlockState(nearbyPos);
+            if (state.is(Blocks.END_ROD)) {
+                for (Direction dir : Direction.values()) {
+                    BlockPos neighborPos = nearbyPos.relative(dir);
+                    Block neighbor = level.getBlockState(neighborPos).getBlock();
+                    if (neighbor instanceof PistonBaseBlock || neighbor instanceof PistonHeadBlock) {
+                        return true;
+                    }
+                }
             }
         }
         return false;
