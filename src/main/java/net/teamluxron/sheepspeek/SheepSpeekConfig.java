@@ -151,7 +151,25 @@ public class SheepSpeekConfig {
                             "Dame danee, dameyo damenanoyo",
                             "We got a, Nr.1 Victory Royale",
                             "*spiderman piza theme starts playing*",
-                            "Funfact: A beer bottle breaking has caused the fall of Yugoslavia"
+                            "Funfact: A beer bottle breaking has caused the fall of Yugoslavia",
+                            "Birdup",
+                            "Get your money up not your funny up",
+                            "Yum",
+                            "Yippie",
+                            "It goes in the square hole",
+                            "Abel is the GOAT",
+                            "Yeah, pepper spray is greeat til it leaks in your purse without you realizing it and you grab your chapstick out of your purse and then rub your eye a little later and you blind yourself for a good 0 minutes during a busy Friday night rush at the restaurant you work at until you literally have the chef and dishwasher pouring milk in your eyes with the entire staff watching",
+                            "Youre a teenager only once guys! Ask your crush out! Go to Parties! Make friends! Travel across Egypt wearing a trench coat with a classmate, a french guy, a fortune teller, your grandpa and a dog!",
+                            "Heres some funfacts about me: I like sleeping in a sunbeam, I dislike 15th-century feudal Japan. Please do not take me back in time to 15th-century feudal Japan. I will not be happy(16th century is ok)",
+                            "The outburst I had at JoAnn's Fabrics is not reflective of who I am!",
+                            "I dont want a job I just want to slowly rotate under a warm light like a 7-eleven hot dog",
+                            "Doesnt smell like anything in here!",
+                            "It becomes more efficient by switching to the triangle",
+                            "Youre trespassing Stranger, This is gods territory now!",
+                            "You are no longer a trespasser. You are a Target now",
+                            "Did you know that outside the US a cats natural predator is a Car?",
+                            "Berried Delight",
+                            "History is a lie made by Paradox Interactive to sell more strategy games"
 
                     ),
                     obj -> obj instanceof String
