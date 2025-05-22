@@ -138,7 +138,20 @@ public class SheepSpeekConfig {
                             "I need a divorce, doesnt have to be mine I just need one",
                             "She took the kids man",
                             "BAAAALD!!!",
-                            "You may have sheared me but my hair at least grows back"
+                            "You may have sheared me but my hair at least grows back",
+                            "Wait until my buddy Keith knows about this!",
+                            "Bro is old McDonald",
+                            "Bro had a farm eieio",
+                            "Man!",
+                            "Sometimes I think, and then I dont",
+                            "Killer Queen has already touched that block.",
+                            "Im playing here from my Nintendo 3DS XL because my mom took my PC and phone away",
+                            "EPIC GAMES BRING BACK TRAVIS SCOTT TO THE ITEM SHOP",
+                            "My boy, this peace is what all true Warriors strive for",
+                            "Dame danee, dameyo damenanoyo",
+                            "We got a, Nr.1 Victory Royale",
+                            "*spiderman piza theme starts playing*",
+                            "Funfact: A beer bottle breaking has caused the fall of Yugoslavia"
 
                     ),
                     obj -> obj instanceof String
