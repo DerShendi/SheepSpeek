@@ -1,25 +1,15 @@
 
-Installation information
-=======
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+A simple and configurable mod about letting a Sheep speak When you rightclick a sheep it gives you its wisdom its collected overtime
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Theres also there are secret chat messages that you can find in specific conditions and soon more can and will be added.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Easy configurable- enabled = true - Enables the mod Itself
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+secretMessages = true - Enables the secret Messages
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+messages - Lets you create your own custom List of sentences your sheep should say
+
+entityTypes = ["minecraft:sheep"] - By Default a sheep but this lets you choose which entity gets to say things to you not only a sheep
+
+If you feel like something doesnt fit or want more default sentences in the mod let me know and ill add more soon.
